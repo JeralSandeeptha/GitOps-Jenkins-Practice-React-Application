@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-react-application-deployment
+spec:
+  selector:
+    matchLabels:
+      app: jenkins-practice-react-application
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jenkins-practice-react-application
+    spec:
+      containers:
+        - name: jenkins-practice-react-application
+          image: jeralsandeeptha/jenkins-practice-react-application:latest
+          ports:
+            - containerPort: 80
+
